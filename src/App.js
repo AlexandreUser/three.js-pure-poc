@@ -11,8 +11,6 @@ function Tips(props){
   </div>
 }
 function App() {
- 
-
   return <div>
     <Header/>
     <Renderer/>
