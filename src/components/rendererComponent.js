@@ -11,10 +11,6 @@ function App() {
     useEffect(() => {
       const scene = new THREE.Scene();
       scene.background = new THREE.Color( "#213bd1" );
-
-     
-
-
       const light = new THREE.AmbientLight( 0x404040 ); // soft white light
       scene.add( light )
       const directionalLight = new THREE.DirectionalLight( "white", 0.9 );
@@ -28,7 +24,6 @@ function App() {
       const renderer = new THREE.WebGLRenderer();
       renderer.setSize(window.innerWidth, window.innerHeight);
       const controls = new OrbitControls( camera, renderer.domElement );
-    
       controls.enableDamping = true; // For that slippery Feeling
       controls.dampingFactor = 0.12; // Needs to call update on render loop 
       controls.rotateSpeed = 0.08; // Rotate speed
@@ -40,7 +35,7 @@ function App() {
     
 
       ref.current.appendChild(renderer.domElement);
-      loader.crossOrigin = "*";
+      // I'm using my own firebase bucket, because the URL you guys sended me was triggering CORS errors. See more in the README.md File.
       loader.load( 'https://firebasestorage.googleapis.com/v0/b/d-poc-2f4a8.appspot.com/o/aristocrat.glb?alt=media&token=608a91f4-557b-4f4b-8ecf-44039c1368f9', gltf => {
         scene.add( gltf.scene );
        

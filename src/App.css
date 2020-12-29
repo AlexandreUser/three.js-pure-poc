@@ -6,7 +6,18 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.tipsContainer{
+  position: absolute;
+  top: 70%;
+  margin-left: 50px;
+}
+.tipTitle{
+  font-weight: bold;
+  color: white;
+}
+.tipValue{
+  color: white;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
